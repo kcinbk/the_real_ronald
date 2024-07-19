@@ -17,7 +17,7 @@ jobs:
       with:
         python-version: '3.10'
     - name: Install all necessary packages
-      run: pip install requests pandas 
+      run: pip install jupyter requests pandas 
     - name: Scraping today's data
       run: jupyter nbconvert --to notebook --execute "request_ronald.ipynb" --stdout
     - name: Commit and push any changes
