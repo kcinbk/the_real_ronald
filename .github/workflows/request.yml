@@ -18,9 +18,7 @@ jobs:
       - name: Install all necessary packages
         run: pip install requests pandas 
       - name: Run the request_ronald script
-        run: python request_ronald.ipynb
-      - name: Convert Jupyter notebook to Python script
-        run: jupyter nbconvert --to script request.ipynb
+        run: python request_ronald.py
       - name: Commit and push if content changed
         run: |-
           git config user.name "Automated"
