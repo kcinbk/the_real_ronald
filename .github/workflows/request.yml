@@ -16,7 +16,7 @@ jobs:
         with:
           python-version: '3.9'
       - name: Install all necessary packages
-        run: pip install requests pandas time requests.adapters, logging
+        run: pip install requests pandas 
       - name: Run the request_ronald script
         run: python request_ronald.ipynb
       - name: Commit and push if content changed
