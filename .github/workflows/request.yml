@@ -1,29 +1,30 @@
 name: request
+
+permissions:
+  contents: write
 on:
   workflow_dispatch:
   schedule:
     - cron: '*/30 * * * *'
-permissions:
-  contents: write
 jobs:
-  scrape:
-    runs-on: ubuntu-20.04
+  daily:
+    runs-on: ubuntu-latest
     steps:
-      - name: Check out this repo
-        uses: actions/checkout@v2
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.9'
-      - name: Install all necessary packages
-        run: pip install requests pandas 
-      - name: Run the request_ronald script
-        run: python request_ronald.py
-      - name: Commit and push if content changed
-        run: |-
-          git config user.name "Automated"
-          git config user.email "actions@users.noreply.github.com"
-          git add -A
-          timestamp=$(date -u)
-          git commit -m "Latest data: ${timestamp}" || exit 0
-          git push
+    - name: Check out this repo
+      uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.10'
+    - name: Install all necessary packages
+      run: pip install jupyter requests pandas 
+    - name: Scraping today's data
+      run: jupyter nbconvert --to notebook --execute "request_ronald.ipynb" --stdout
+    - name: Commit and push any changes
+      run: |-
+        git config user.name "Automated"
+        git config user.email "actions@users.noreply.github.com"
+        git add -A
+        timestamp=$(date -u)
+        git commit -m "Latest data: ${timestamp}" || exit 0
+        git push
