@@ -17,13 +17,9 @@ jobs:
       with:
         python-version: '3.10'
     - name: Install all necessary packages
-      run: pip install jupyter requests pandas plotly nltk scikit-learn contractions emoji spacy tldextract seaborn wordcloud
-    - name: Download spaCy model
-      run: python -m spacy download en_core_web_lg
+      run: pip install jupyter requests pandas
     - name: Scrape data every 6 hours
       run: jupyter nbconvert --to notebook --execute "request_ronald.ipynb" --stdout
-    - name: Run analysis every 6 hours
-      run: jupyter nbconvert --to notebook --execute "eda_ronald.ipynb" --stdout
     - name: Commit and push any changes
       run: |-
         git config user.name "Automated"
@@ -32,3 +28,4 @@ jobs:
         timestamp=$(date -u)
         git commit -m "Latest data: ${timestamp}" || exit 0
         git push
+
