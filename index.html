@@ -1,63 +1,102 @@
-<head>
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
     <style>
+        .header .title {
+            font-family:"Courier New";
+            font-weight:lighter;
+            font-size: 28px;
+            color:orange;
+            text-align:center;
+            float:float;
+            }
+
+        .header .subtitle {
+            font-family:"Courier New";
+            font-weight:lighter;
+            font-size: 22px;
+            color:orange;
+            text-decoration: underline;
+            text-align:center;
+            float:float;
+            margin-bottom:60px;
+        }
+
+
         body {
+            display: flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            margin:60px;
+            background-color: #EEF1FF
+        }
+
+        .paragraph {
+            text-align: left; 
+            margin: 10px;
+            word-wrap: break-word; 
+            font: "Serif";
+            font-weight: 100;
+            font-size: 20px;
+            color:black;
+
+        }
+
+
+        viz {
             display: flex;
             flex-direction: column;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            padding: 0 20px;
-            background-color: rgb(238, 241, 255)
-        }
-        h1 {
-            margin-top: 20px; 
-            margin-bottom: 50px;
+            width: 100%;
         }
         
-        p {
-            font-size:20px;
-            margin-top: 5px;
-            margin-bottom: 5px;
-            text-align: left;
-            padding: 0 40px;
-        }
-        
-        p.second {
-            font-size:20px;
-            margin-top: 5px;
-            margin-bottom: 20px;
-            text-align:left !important;
-            padding: 0 40px;
+        img {
+            display:flex;
+            width: 75%; 
+            height: 80vh;
+            margin:5px;
+
         }
 
-        #iframes {
-            display: flex;
-            width: 100%;
-            justify-content: space-around;
-        }
         iframe {
             display: flex;
-            width: 50%; 
+            width: 100%; 
             height: 100vh;
-            border: none;
+            border: None;
         }
     </style>
+
+
+<head>
+    <div class="header">
+        <div class="title">
+            <h1>
+                What's up with The Ronald?
+            </h1>
+        <div class='subtitle'>
+            <h2>
+                An analytic tool capturing the latest misinformation trend
+            </h2>
+    </div>
 </head>
 
 <body>
-    <h1>What's new with the Ronald?</h1>
-    
-    <p> This 
+    <p class="paragraph"> 
+        I'm a dashboard summarizing what folks are chatting about on <a href="https://patriots.win/">The Ronald</a>, 
+        where diehard fans of the 45th president congregate.  
+    </p>
+    <p class="paragraph"> 
+        Every few hours, I pull the 500 most upvoted posts from the landing page on The Ronald, crunch some numbers and 
+        then show you a picture of what they are discussing, so that you don't have to go there.
     </p>
         
-    <br>
-    
-    <p class="second"> This dashboard helps you quickly understand what folks are talking about on The Ronald, where diehard fans of the 45th congregate. 
-
-    </p>
-
-    <div id="iframes">
-        <iframe src="RI housing rent burden map_01-10-2024.html"></iframe>
+    <div id="viz">
+        <img src="visualizations/bigrams_wordcloud_24hrs.jpeg" alt="Bigrams Wordcloud 24hrs">
+        <iframe src="visualizations/interactive_bigrams_7days.html"></iframe>
     </div>
     
 </body>
