@@ -21,9 +21,9 @@ jobs:
     - name: Download spaCy model
       run: python -m spacy download en_core_web_lg
 
-    - name: Run analysis every 6 hours
+    - name: Run analysis every 12 hours
       run: jupyter nbconvert --to notebook --execute "eda_ronald.ipynb" --stdout
-      
+
     - name: Commit and push any changes
       run: |-
         git config user.name "Automated"

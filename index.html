@@ -49,17 +49,24 @@
 
         viz {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
             width: 100%;
         }
         
         img {
             display:flex;
-            width: 75%; 
-            height: 80vh;
+            width: 50%; 
+            height: 60vh;
             margin:5px;
 
+        }
+
+        plotly {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 200%;
         }
 
         iframe {
@@ -95,8 +102,13 @@
     </p>
         
     <div id="viz">
-        <img src="visualizations/bigrams_wordcloud_24hrs.jpeg" alt="Bigrams Wordcloud 24hrs">
-        <iframe src="visualizations/interactive_bigrams_7days.html"></iframe>
+        <img src="viz/bigrams_wordcloud_24hrs.jpeg"></img>
+    </div>
+
+
+    
+    <div id="plotly">
+        <iframe src="viz/interactive_bigrams_7days.html"></iframe>
     </div>
     
 </body>
