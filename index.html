@@ -6,75 +6,87 @@
 
     <style>
         .header .title {
-            font-family:"Courier New";
-            font-weight:lighter;
-            font-size: 28px;
-            color:orange;
-            text-align:center;
-            float:float;
-            }
+    font-family:"Courier New";
+    font-weight:lighter;
+    font-size: 28px;
+    color:orange;
+    text-align:center;
+    float:float;
+}
 
-        .header .subtitle {
-            font-family:"Courier New";
-            font-weight:lighter;
-            font-size: 22px;
-            color:orange;
-            text-decoration: underline;
-            text-align:center;
-            float:float;
-            margin-bottom:60px;
-        }
+.header .subtitle {
+    font-family:"Courier New";
+    font-weight:lighter;
+    font-size: 22px;
+    color:orange;
+    text-decoration: underline;
+    text-align:center;
+    float:float;
+    margin-bottom:30px; /* Reduced margin-bottom */
+}
 
+body {
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    margin:30px; /* Reduced margin */
+    background-color: #EEF1FF
+}
 
-        body {
-            display: flex;
-            flex-direction:column;
-            justify-content:center;
-            align-items:center;
-            margin:60px;
-            background-color: #EEF1FF
-        }
+p.main{
+    font: "Times New Roman";
+    font-size: 20px;
+    color:black;
+    font-weight: 100;
+    text-align: center; 
+    margin-bottom: 10px;
+    word-wrap: break-word; 
+}
 
-        .paragraph {
-            text-align: left; 
-            margin: 10px;
-            word-wrap: break-word; 
-            font: "Serif";
-            font-weight: 100;
-            font-size: 20px;
-            color:black;
+p.secondary{
+    font: "Times New Roman";
+    font-size: 24px;
+    font-weight: 100;
+    text-align: left; 
+    margin-top:25px;
+    word-wrap: break-word; 
+}
 
-        }
+#viz {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom:10px; /* Keep as is */
+}
 
+img {
+    display:flex;
+    width: 50%; 
+    height: 70vh;
+    margin:5px; /* Keep as is */
+}
 
-        #viz {
-            display: flex;
-            width: 100%;
-            justify-content: space-around;
-        }
-    
-        
-        img {
-            display:flex;
-            width: 50%; 
-            height: 70vh;
-            margin:5px;
+plotly {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200%;
+}
 
-        }
+#iframes {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom:10px; /* Added margin-bottom for spacing consistency */
+}
 
-        plotly {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 200%;
-        }
+iframe {
+    display: fixed;
+    width: 100%; 
+    height: 100vh;
+}
 
-        iframe {
-            display: flex;
-            width: 100%; 
-            height: 100vh;
-            border: None;
-        }
     </style>
 
 
@@ -92,41 +104,42 @@
 </head>
 
 <body>
-    <p class="paragraph"> 
+    <p class='main'> 
         I'm a dashboard summarizing what folks are chatting about on <a href="https://patriots.win/">The Donald</a>, 
         where diehard fans of the 45th president congregate. Every few hours, I pull the 500 most popular posts 
         from the landing page on The Ronald, crunch some numbers and then show a picture of what they are discussing, 
         so that you don't have to go there. 
     </p>
 
-    <p class="paragraph" style="font-size: 24px; color: red "> 
-       <strong> Section A. The 10 most popular posts from last 24 hours on the land page </strong> 
+    <p class="secondary" style="color: red;" > 
+       <strong> Most popular posts from last 24 hours </strong> 
     </p>
 
     <div id="viz">
-        <iframe src="viz/10_most_popular_posts_in_the_last_1_day(s).html"></iframe>
+        <iframe src="viz/most_popular_posts_in_the_last_day(s).html"></iframe>
     </div>
 
-
-    <p class="paragraph" style="font-size: 24px; color: darkblue "> 
-        <strong> Section B. The 50 most-mentioned bigrams in the last 24 hours </strong> 
+    <p class="secondary" style="color: darkblue "> 
+        <strong> The 50 most-mentioned bigrams in the last 24 hours </strong> 
      </p>
 
-     <p class="paragraph" style="font-style: italic; font-size: 16px;">
-        (To make the analysis meaningful, some commonly used words, such as determinters (i.e. "a" and "the") and auxiliary words (i.e. "will" and "can"), have been excluded from the underlining data. 
-        The word "trump" has also been removed.)
-    </p>
+     <ul class="paragraph" style="font-style: italic; font-size: 18px; color:darkblue">
+       <li>  "Bigrams" refer to two adjacent words. It provides a snapshot of the topics </li>
+       <li> In order to gain the meaningful insights, some commonly used words, such as determinters (i.e. "a" and "the") and auxiliary words (i.e. "will" and "can"), have been excluded from the underlining data. 
+        The word "trump" has also been removed.</li>
+        </ul>
 
-    <div id="viz">
-        <img src="viz/bigrams_wordcloud_24hrs.jpeg"></img>
+    <div id="iframes">
+        <img src="viz/bigrams_wordcloud_24hrs.jpeg"></image>
+        <iframe src="viz/top_bigrams_24hrs_table.html"></iframe>
     </div>
 
 
-    <p class="paragraph" style="font-size: 24px; color: darkolivegreen "> 
-        <strong> Section C. The 20 most-mentioned bigrams in the last 7 days </strong> 
+    <p class="secondary" style="color: darkolivegreen "> 
+        <strong> Top 20 bigrams in the last 7 days </strong> 
      </p>
     <div id="plotly">
-        <iframe src="viz/interactive_bigrams_7days.html"></iframe>
+        <iframe src="viz/interactive_bigrams_7days.html">
     </div>
     
 </body>
