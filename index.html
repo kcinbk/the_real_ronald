@@ -39,7 +39,11 @@ p.main{
     font-size: 20px;
     color:black;
     font-weight: 100;
+<<<<<<< Updated upstream
     text-align: center; 
+=======
+    text-align: left; 
+>>>>>>> Stashed changes
     margin-bottom: 10px;
     word-wrap: break-word; 
 }
@@ -48,11 +52,16 @@ p.secondary{
     font: "Times New Roman";
     font-size: 24px;
     font-weight: 100;
+<<<<<<< Updated upstream
     text-align: left; 
+=======
+    text-align: center; 
+>>>>>>> Stashed changes
     margin-top:25px;
     word-wrap: break-word; 
 }
 
+<<<<<<< Updated upstream
 #viz {
     display: flex;
     width: 100%;
@@ -85,6 +94,48 @@ iframe {
     display: fixed;
     width: 100%; 
     height: 100vh;
+=======
+ul.list{
+    font-size: 18px; 
+    color:black;
+    font-style:italic;
+    text-align: left
+}
+
+#viz {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom:10px; /* Keep as is */
+}
+
+img {
+    display:flex;
+    width: 50%; 
+    height: 70vh;
+    margin:5px; /* Keep as is */
+}
+
+plotly {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200%;
+}
+
+#iframes {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom:10px; /* Added margin-bottom for spacing consistency */
+}
+
+iframe {
+    display: flex;
+    width: 100%; 
+    height: 80vh;
+    border:None
+>>>>>>> Stashed changes
 }
 
     </style>
@@ -115,16 +166,27 @@ iframe {
        <strong> Most popular posts from last 24 hours </strong> 
     </p>
 
+<<<<<<< Updated upstream
     <div id="viz">
         <iframe src="viz/most_popular_posts_in_the_last_day(s).html"></iframe>
     </div>
+=======
+    <p id="viz">
+        <iframe src="viz/most_popular_posts_in_the_last_day(s).html"></iframe>
+    </p>
+>>>>>>> Stashed changes
 
     <p class="secondary" style="color: darkblue "> 
         <strong> The 50 most-mentioned bigrams in the last 24 hours </strong> 
      </p>
 
+<<<<<<< Updated upstream
      <ul class="paragraph" style="font-style: italic; font-size: 18px; color:darkblue">
        <li>  "Bigrams" refer to two adjacent words. It provides a snapshot of the topics </li>
+=======
+     <ul class="list">
+       <li>  "Bigrams" refer to two adjacent words. Examining them could be an efficient way to quickly understand the topics of the text.</li>
+>>>>>>> Stashed changes
        <li> In order to gain the meaningful insights, some commonly used words, such as determinters (i.e. "a" and "the") and auxiliary words (i.e. "will" and "can"), have been excluded from the underlining data. 
         The word "trump" has also been removed.</li>
         </ul>
