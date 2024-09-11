@@ -53,6 +53,15 @@ p.secondary{
     word-wrap: break-word; 
 }
 
+
+ul.bullet-list {
+    font-style: italic;
+    font-size: 18px;
+    list-style: inside ; 
+    text-align: left;
+}
+
+
 #viz {
     display: flex;
     width: 100%;
@@ -112,19 +121,12 @@ iframe {
         so that you don't have to go there. 
     </p>
 
-    <p class="secondary" style="color: red;" > 
-       <strong> Most popular posts from last 24 hours </strong> 
-    </p>
-
-    <div id="viz">
-        <iframe src="viz/most_popular_posts_in_the_last_day(s).html"></iframe>
-    </div>
 
     <p class="secondary" style="color: darkblue "> 
         <strong> The 50 most-mentioned bigrams in the last 24 hours </strong> 
      </p>
 
-     <ul class="paragraph" style="font-style: italic; font-size: 18px; color:darkblue">
+     <ul class="bullet-list" style="color:darkblue;">
        <li>  "Bigrams" refer to two adjacent words. It provides a snapshot of the topics </li>
        <li> In order to gain the meaningful insights, some commonly used words, such as determinters (i.e. "a" and "the") and auxiliary words (i.e. "will" and "can"), have been excluded from the underlining data. 
         The word "trump" has also been removed.</li>
@@ -135,10 +137,21 @@ iframe {
         <iframe src="viz/top_bigrams_24hrs_table.html"></iframe>
     </div>
 
+    <p class="secondary" style="color: red;" > 
+        <strong> Most popular posts from last 24 hours </strong> 
+     </p>                                            
+ 
+     <div id="viz">
+         <iframe src="viz/most_popular_posts_in_the_last_day(s).html"></iframe>
+     </div>
+
 
     <p class="secondary" style="color: darkolivegreen "> 
         <strong> Top 20 bigrams in the last 7 days </strong> 
      </p>
+     <ul class="bullet-list" style="color:darkolivegreen;">
+        <li>  TK </li>
+         </ul>
     <div id="plotly">
         <iframe src="viz/interactive_bigrams_7days.html">
     </div>
