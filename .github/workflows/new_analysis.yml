@@ -35,7 +35,7 @@ jobs:
 
       - name: Install all necessary packages
         run: pip install --no-cache-dir jupyter requests pandas plotly nltk scikit-learn contractions emoji spacy tldextract seaborn wordcloud 
-             pip install python-dotenv==0.19.3
+             pip install git+https://github.com/theskumar/python-dotenv.git#egg=python-dotenv
       - name: Download spaCy model
         run: python -m spacy download en_core_web_lg
 
