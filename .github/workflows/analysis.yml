@@ -25,7 +25,7 @@ jobs:
       run: echo "PYTHONPATH=$PYTHONPATH:$GITHUB_WORKSPACE/SearchTube" >> $GITHUB_ENV
 
     - name: Install all necessary packages
-      run: pip install jupyter requests pandas plotly nltk scikit-learn contractions emoji spacy tldextract seaborn wordcloud
+      run: pip install jupyter requests pandas plotly nltk scikit-learn contractions emoji spacy tldextract seaborn wordcloud dotenv
 
     - name: Download spaCy model
       run: python -m spacy download en_core_web_lg
