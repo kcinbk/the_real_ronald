@@ -1,4 +1,4 @@
-name: eda_analysis
+name: latest_analysis.yml
 
 permissions:
   contents: write
@@ -36,7 +36,7 @@ jobs:
       - name: Download spaCy model
         run: python -m spacy download en_core_web_lg
 
-      - name: Run eda_analysis every 12 hours
+      - name: Run latest_analysis.yml every 12 hours
         run: |
           jupyter nbconvert --to notebook --execute "eda_ronald.ipynb" --stdout || exit 0
 
