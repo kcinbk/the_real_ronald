@@ -17,7 +17,8 @@ jobs:
       with:
         python-version: '3.10'
     - name: Install all necessary packages
-      run: pip install jupyter requests pandas plotly nltk scikit-learn contractions emoji spacy tldextract seaborn wordcloud os dotenv sys SearchTube
+      run: pip install jupyter requests pandas plotly nltk scikit-learn contractions emoji spacy tldextract seaborn wordcloud SearchTube
+      
     - name: Download spaCy model
       run: python -m spacy download en_core_web_lg
 
