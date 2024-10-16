@@ -1,4 +1,4 @@
-name: new_analysis
+name: eda_analysis
 
 permissions:
   contents: write
@@ -39,7 +39,7 @@ jobs:
       - name: Download spaCy model
         run: python -m spacy download en_core_web_lg
 
-      - name: Run new_analysis every 12 hours
+      - name: Run eda_analysis every 12 hours
         run: jupyter nbconvert --to notebook --execute "eda_ronald.ipynb" --stdout
 
       - name: Commit and push any changes
@@ -51,3 +51,4 @@ jobs:
           git commit -m "Latest data: ${timestamp}" || exit 0
           git pull --rebase
           git push --force
+
