@@ -12,6 +12,7 @@ jobs:
     steps:
     - name: Check out this repo
       uses: actions/checkout@v2
+      
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
@@ -22,10 +23,9 @@ jobs:
 
     - name: Include the SearchTube module to PYTHONPATH
       run: echo "PYTHONPATH=$PYTHONPATH:$GITHUB_WORKSPACE/SearchTube" >> $GITHUB_ENV
-    
+
     - name: Install all necessary packages
       run: pip install jupyter requests pandas plotly nltk scikit-learn contractions emoji spacy tldextract seaborn wordcloud
-      
 
     - name: Download spaCy model
       run: python -m spacy download en_core_web_lg
@@ -42,4 +42,3 @@ jobs:
         git commit -m "Latest data: ${timestamp}" || exit 0
         git pull --rebase
         git push --force
-
