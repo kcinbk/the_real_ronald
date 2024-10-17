@@ -6,7 +6,7 @@ permissions:
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */12 * * *' 
+    - cron: '0 */7 * * *' 
 
 jobs:
   daily:
@@ -36,7 +36,7 @@ jobs:
       - name: Download spaCy model
         run: python -m spacy download en_core_web_lg
 
-      - name: Run latest_analysis.yml every 12 hours
+      - name: Run latest_analysis.yml every 7 hours
         run: |
           jupyter nbconvert --to notebook --execute "eda_ronald.ipynb" --stdout || exit 0
 
