@@ -37,7 +37,7 @@ jobs:
       - name: Download spaCy model
         run: python -m spacy download en_core_web_lg
 
-      - name: Run latest_analysis.yml every 7 hours
+      - name: Run latest_analysis.yml
         run: |
           jupyter nbconvert --to notebook --execute "eda_ronald.ipynb" --stdout || exit 0
 
