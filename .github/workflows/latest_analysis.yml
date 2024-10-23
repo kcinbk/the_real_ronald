@@ -35,8 +35,7 @@ jobs:
           pip install --no-cache-dir jupyter requests pandas plotly nltk scikit-learn contractions emoji spacy tldextract seaborn wordcloud 
           pip install git+https://github.com/theskumar/python-dotenv.git#egg=python-dotenv
           pip install git+https://github.com/kcinbk/SearchTube.git#egg=SearchTube
-          python -m pip install google-api-python-client
-
+          pip install git+https://github.com/googleapis/google-api-python-client.git
 
       - name: Download spaCy model
         run: python -m spacy download en_core_web_lg
