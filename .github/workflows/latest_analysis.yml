@@ -32,7 +32,7 @@ jobs:
 
       - name: Install all necessary packages
         run: |
-          pip install --no-cache-dir jupyter requests pandas plotly nltk scikit-learn contractions emoji spacy tldextract seaborn wordcloud 
+          pip install --no-cache-dir jupyter requests pandas plotly nltk scikit-learn contractions emoji spacy tldextract seaborn wordcloud google-api-python-client
           pip install git+https://github.com/theskumar/python-dotenv.git#egg=python-dotenv
           pip install git+https://github.com/kcinbk/SearchTube.git#egg=SearchTube
 
