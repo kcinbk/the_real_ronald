@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <style>
+        .header .title {
+    font-family:"Courier New";
+    font-weight:lighter;
+    font-size: 30px;
+    text-align:center;
+    float:float;
+}
+
+.header .subtitle {
+    font-family:"Courier New";
+    font-weight:lighter;
+    font-size: 25px;
+    text-decoration: underline;
+    text-align:center;
+    float:float;
+    margin-bottom:30px; /* Reduced margin-bottom */
+}
+
+ul li{
+ font-size:20px;
+}
+
+body {
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    margin:30px; /* Reduced margin */
+    background-color: #EEF1FF
+}
+
+p.main{
+    font: "Times New Roman";
+    font-size: 25px;
+    font-weight: 100;
+    text-align: center; 
+    margin-bottom: 10px;
+    word-wrap: break-word; 
+}
+
+p.secondary{
+    font: "Times New Roman";
+    font-size: 24px;
+    font-weight: 100;
+    text-align: left; 
+    margin-top:25px;
+    word-wrap: break-word; 
+}
+
+
+ul.bullet-list {
+    font-style: italic;
+    font-size: 18px;
+    list-style: inside ; 
+    text-align: left;
+}
+
+
+#viz {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom:10px; /* Keep as is */
+}
+
+img {
+    display:flex;
+    width: 50%; 
+    height: 70vh;
+    margin:5px; /* Keep as is */
+}
+
+.plotly {
+    display: fixed;
+    flex-direction: column;
+    align-items: center;
+    width: 200%;
+}
+
+#iframes {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom:10px; /* Added margin-bottom for spacing consistency */
+}
+
+iframe {
+    display: flex;
+    width: 100%; 
+    height: 75vh;
+    border:None;
+}
+
+
+    </style>
+
+
+<head>
+    <div class="header">
+        <div class="title">
+            <h1>
+                What's up with The Donald?
+            </h1>
+        <div class='subtitle'>
+            <h2>
+                An analytic tool capturing the latest misinformation trend
+            </h2>
+    </div>
+</head>
+
+<body>
+    <p class='main'> 
+        I'm a dashboard summarizing what folks are chatting about on <a href="https://patriots.win/">The Donald</a>, 
+        where many diehard fans of the 45th president congregate. Every few hours, I pull the 500 most popular posts 
+        from the landing page on The Donald, crunch some numbers and then show a picture of what they are discussing, 
+        so that you don't have to go there. 
+    </p>
+
+
+    <p class="secondary" style="color: black "> 
+        <strong> The 50 most-mentioned bigrams in the last 24 hours </strong> 
+     </p>
+
+     <ul class="bullet-list">
+       <li>  "Bigrams" refer to two adjacent words. It provides a snapshot of the discussions that users on this site may engage in. 
+             For exmaple, since announcing her candidacy, ['kamala', 'harris'] has been the most popular topic among users of this site. </li>
+       <li> In order to gain the meaningful insights, some commonly used words, such as determinters (i.e. "a" and "the") and auxiliary words (i.e. "will" and "can"), have been excluded from the underlining data. 
+        The word "trump" has also been removed.</li>
+        </ul>
+
+    <div id="iframes">
+        <img src="viz/bigrams_wordcloud_24hrs.jpeg"></image>
+        <iframe src="viz/top_bigrams_24hrs_table.html"></iframe>
+    </div>
+
+    <p class="secondary" > 
+        <strong> Most popular posts from last 24 hours </strong> 
+     </p>                                            
+ 
+     <div id="viz">
+         <iframe src="viz/top_10_posts_from_the_past_day.html"></iframe>
+     </div>
+
+     <p class="secondary"> 
+        <strong> Posts mentioning election vs election fraud</strong> 
+     </p>
+     <ul class="bullet-list">
+        <li> This stacked chart compares claims of election fraud against election-related content in each day's posts. 
+             As voting is about to begin in many states, we may see the red area taking up more space compared to the green in the chart.
+             </li>
+        <li> Election-related keywords include but not excluding to "election", "ballot" and "votes." For fraud, 
+             a post must mention one of those election keywords in conjuction with "steal", "rig", "cheat" or 
+             similiar words in the same sentence. </li>
+         </ul>
+
+     <div id="viz">
+        <img src="viz/election_vs_election_fraud_new.jpeg" style="width:80%; height:80%;"></image>
+    </div>
+
+
+    <p class="secondary"> 
+        <strong> Top Youtube videos from the past 3 days </strong> 
+     </p>
+     <ul class="bullet-list"">
+        <li> Cross-platform sharing, an integral part of the internet and social media ecosystem, is often difficult to study.</li>
+        <li> YouTube has made up nearly 50 percent of the video content shared on this site. Analyzing the videos shared 
+            on The Donald can help detect popular but misleading information on YouTube. </li>
+         <li> The "brief_description" field captures the first sentence from a Youtube video's 
+              full description, if available. </li>
+         </ul>
+    <div id="viz">
+        <iframe src="viz/top_youtube_table_new.html">
+    </div>
+    
+</body>
+</html>
