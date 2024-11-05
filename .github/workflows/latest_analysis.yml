@@ -8,6 +8,7 @@ on:
     workflows: ["request"]
     types:
       - completed
+  workflow_dispatch:
 
 jobs:
   daily:
