@@ -16,7 +16,9 @@ jobs:
     steps:
       - name: Check out this repo
         uses: actions/checkout@v2
-      
+        with:
+          submodules: true  # This will initialize and update submodules automatically
+
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
@@ -44,7 +46,7 @@ jobs:
         run: |
           git clone https://github.com/huggingface/transformers
           cd transformers
-          # if needed switch to the last known good SHA until transformers@master is fixed
+          # If needed switch to the last known good SHA until transformers@master is fixed
           git checkout e7e9261a2
           git rev-parse --short HEAD
           pip install .
