@@ -43,13 +43,7 @@ jobs:
         run: pip install torch 
 
       - name: Install transformers
-        run: |
-          git clone https://github.com/huggingface/transformers
-          cd transformers
-          # If needed switch to the last known good SHA until transformers@master is fixed
-          git checkout e7e9261a2
-          git rev-parse --short HEAD
-          pip install .
+        run: pip install transformers
 
       - name: Verify PyTorch Installation
         run: |
