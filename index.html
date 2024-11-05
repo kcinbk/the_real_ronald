@@ -135,9 +135,9 @@ iframe {
     <ul class="bullet-list">
         <li> This stacked chart compares ESTIMATED claims of election fraud or irregularity against election-related content in each day's posts.
             </li> 
-        <li> Election-related posts were filtered through searching for keywords including "election", "ballot" and "votes." </li>
-        <li> To identify which of these election-related posts contain potential claims of election fraud, a binary classification 
-            analysis was conducted with the open-sourced <a href="https://huggingface.co/MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli">DeBERTa-v3-base-mnli-fever-anli</a> model. 
+        <li> Election-related posts were filtered through searching for keywords including "election," "ballot" and "votes." </li>
+        <li> To identify which of these election-related posts allege potential election fraud, a binary classification 
+            analysis was conducted with the open-sourced LLM model <a href="https://huggingface.co/MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli">DeBERTa-v3-base-mnli-fever-anli</a> . 
             (While the zero-shot classification was not flawless and did include individual posts to be false positives, 
             an volunteer and I had previously analyzed a sample of positive posts and found the macros satisfactory.)
              </li>
