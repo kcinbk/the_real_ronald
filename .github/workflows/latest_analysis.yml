@@ -37,9 +37,11 @@ jobs:
           pip install git+https://github.com/theskumar/python-dotenv.git#egg=python-dotenv
           pip install git+https://github.com/kcinbk/SearchTube.git#egg=SearchTube
       
-      - name: Install pytorch
+      - name: Install PyTorch
         run: |
-          "pip install -U --cache-dir $TORCH_CACHE torch==2.0.1+cu121 --index-url https://download.pytorch.org/whl/cu121"
+          pip install -U --cache-dir $TORCH_CACHE torch==2.0.1+cu121 --index-url https://download.pytorch.org/whl/cu121
+          python -c "import torch; print('torch:', torch.__version__, torch)"
+          python -c "import torch; print('CUDA available:', torch.cuda.is_available())"
 
   
       - name: Install transformers
