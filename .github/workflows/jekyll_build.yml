@@ -1,9 +1,10 @@
 name: Build and Deploy Jekyll site to GitHub Pages
 
 on:
-  push:
-    branches:
-      - main 
+  workflow_run:
+    workflows: ["latest_analysis.yml"]
+    types:
+      - completed
 
 jobs:
   build:

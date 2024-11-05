@@ -58,6 +58,9 @@ jobs:
         run: |
           jupyter nbconvert --to notebook --execute "eda_ronald.ipynb" --stdout || exit 0
 
+      - name: List generated files
+        run: ls -la
+
       - name: Commit and push any changes
         run: |
           git config user.name "Automated"
@@ -67,9 +70,3 @@ jobs:
           git commit -m "Latest data: ${timestamp}" || exit 0
           git pull --rebase || exit 0
           git push --force || exit 0
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
