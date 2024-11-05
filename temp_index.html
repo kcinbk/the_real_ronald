@@ -33,7 +33,7 @@ body {
     justify-content:center;
     align-items:center;
     margin:30px; /* Reduced margin */
-    background-color: #f38883
+    background-color: #EEF1FF
 }
 
 p.main{
@@ -124,36 +124,20 @@ iframe {
     </p>
 
 
-    <p class="secondary"> 
-        <strong> Posts mentioning election vs election fraud</strong> 
-     </p>
-     <ul class="bullet-list">
-        <li> This stacked chart compares ESTIMATED claims of election frau or irregularity against election-related content in each day's posts.
-        </li> 
-        <li>    
-            Posts that potentially contain claims of election fraud or irregularity were identified by running a binary, zero-shot 
-            analysis using the <a href="https://huggingface.co/MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli">DeBERTa-v3-base-mnli-fever-anli</a> model. 
-            (To assesss the accuracy of the model, two reviewers independently and mannually analyzed a sample of posts, and reached similar observations.)
-             </li>
-         </ul>
-
-     <div id="viz">
-        <img src="viz/election_vs_election_fraud_new.jpeg" style="width:80%; height:80%;"></image>
-    </div>
-
-
     <p class="secondary" style="color: black "> 
-        <strong> Locations mentioned in fraud claim </strong> 
+        <strong> The 50 most-mentioned bigrams in the last 24 hours </strong> 
      </p>
 
      <ul class="bullet-list">
-       <li> The wordcloud chart and table list the names of stats, counties or municipalities that have been mentioned in posts that 
-            may include claims of election fraud or irregularity in the past two days.
-        </li>
+       <li>  "Bigrams" refer to two adjacent words. It provides a snapshot of the discussions that users on this site may engage in. 
+             For exmaple, since announcing her candidacy, ['kamala', 'harris'] has been the most popular topic among users of this site. </li>
+       <li> In order to gain the meaningful insights, some commonly used words, such as determinters (i.e. "a" and "the") and auxiliary words (i.e. "will" and "can"), have been excluded from the underlining data. 
+        The word "trump" has also been removed.</li>
+        </ul>
 
     <div id="iframes">
-        <img src="viz/location_potential_fraud_claim_wordcloud.jpeg"></image>
-        <iframe src="viz/location_potential_fraud_claim_table.html"></iframe>
+        <img src="viz/bigrams_wordcloud_24hrs.jpeg"></image>
+        <iframe src="viz/top_bigrams_24hrs_table.html"></iframe>
     </div>
 
     <p class="secondary" > 
@@ -164,6 +148,21 @@ iframe {
          <iframe src="viz/top_10_posts_from_the_past_day.html"></iframe>
      </div>
 
+     <p class="secondary"> 
+        <strong> Posts mentioning election vs election fraud</strong> 
+     </p>
+     <ul class="bullet-list">
+        <li> This stacked chart compares claims of election fraud against election-related content in each day's posts. 
+             As voting is about to begin in many states, we may see the red area taking up more space compared to the green in the chart.
+             </li>
+        <li> Election-related keywords include but not excluding to "election", "ballot" and "votes." For fraud, 
+             a post must mention one of those election keywords in conjuction with "steal", "rig", "cheat" or 
+             similiar words in the same sentence. </li>
+         </ul>
+
+     <div id="viz">
+        <img src="viz/election_vs_election_fraud_new.jpeg" style="width:80%; height:80%;"></image>
+    </div>
 
 
     <p class="secondary"> 
