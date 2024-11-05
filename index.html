@@ -127,29 +127,26 @@ iframe {
     <p class="secondary"> 
         <strong> Posts mentioning election vs election fraud</strong> 
      </p>
-     <ul class="bullet-list">
-        <li> This stacked chart compares ESTIMATED claims of election frau or irregularity against election-related content in each day's posts.
-        </li> 
-        <li>    
-            Posts that potentially contain claims of election fraud or irregularity were identified by running a binary, zero-shot 
-            analysis using the <a href="https://huggingface.co/MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli">DeBERTa-v3-base-mnli-fever-anli</a> model. 
-            (To assesss the accuracy of the model, two reviewers independently and mannually analyzed a sample of posts, and reached similar observations.)
-             </li>
-         </ul>
-
+    
      <div id="viz">
         <img src="viz/election_vs_election_fraud_new.jpeg" style="width:80%; height:80%;"></image>
     </div>
+
+    <ul class="bullet-list">
+        <li> This stacked chart compares ESTIMATED claims of election frau or irregularity against election-related content in each day's posts.
+        </li> 
+        <li> Election-related posts were filtered through searching for keywords including "election", "ballot" and "votes." </li>
+        <li> To identify which of these election-related posts that potentially contain claims of  fraud or irregularity, a binary classification 
+            analysis was conducted with the <a href="https://huggingface.co/MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli">DeBERTa-v3-base-mnli-fever-anli</a> model. 
+            (While the zero-shot classification was not meant to be perfect, reviewers had previously 
+            analyzed a meaningful sample of these posts and reached satisfying observations.)
+             </li>
+         </ul>
 
 
     <p class="secondary" style="color: black "> 
         <strong> Locations mentioned in fraud claim </strong> 
      </p>
-
-     <ul class="bullet-list">
-       <li> The wordcloud chart and table list the names of stats, counties or municipalities that have been mentioned in posts that 
-            may include claims of election fraud or irregularity in the past two days.
-        </li>
 
     <div id="iframes">
         <img src="viz/location_potential_fraud_claim_wordcloud.jpeg"></image>
