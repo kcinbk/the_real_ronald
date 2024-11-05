@@ -33,7 +33,7 @@ body {
     justify-content:center;
     align-items:center;
     margin:30px; /* Reduced margin */
-    background-color: #f38883
+    background-color: #d1f2eb
 }
 
 p.main{
@@ -118,14 +118,14 @@ iframe {
 <body>
     <p class='main'> 
         I'm a dashboard summarizing what folks are chatting about on <a href="https://patriots.win/">The Donald</a>, 
-        where many diehard fans of the 45th president congregate. Every few hours, I pull the 500 most popular posts 
-        from the landing page on The Donald, crunch some numbers and then show a picture of what they are discussing, 
+        where many diehard fans of the 45th president congregate. Every few hours, I pull the <strong style="color: red;">500</strong>
+        most popular posts from the landing page on The Donald, crunch some numbers and then show a picture of what they are discussing, 
         so that you don't have to go there. 
     </p>
 
 
     <p class="secondary"> 
-        <strong> Posts mentioning election vs election fraud</strong> 
+        <strong> Election, claims of election fraud trend in the past 30 days</strong> 
      </p>
     
      <div id="viz">
@@ -133,32 +133,42 @@ iframe {
     </div>
 
     <ul class="bullet-list">
-        <li> This stacked chart compares ESTIMATED claims of election frau or irregularity against election-related content in each day's posts.
-        </li> 
+        <li> This stacked chart compares ESTIMATED claims of election fraud or irregularity against election-related content in each day's posts.
+            </li> 
         <li> Election-related posts were filtered through searching for keywords including "election", "ballot" and "votes." </li>
-        <li> To identify which of these election-related posts that potentially contain claims of  fraud or irregularity, a binary classification 
-            analysis was conducted with the <a href="https://huggingface.co/MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli">DeBERTa-v3-base-mnli-fever-anli</a> model. 
-            (While the zero-shot classification was not meant to be perfect, reviewers had previously 
-            analyzed a meaningful sample of these posts and reached satisfying observations.)
+        <li> To identify which of these election-related posts contain potential claims of election fraud, a binary classification 
+            analysis was conducted with the open-sourced <a href="https://huggingface.co/MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli">DeBERTa-v3-base-mnli-fever-anli</a> model. 
+            (While the zero-shot classification was not flawless and did include individual posts to be false positives, 
+            an volunteer and I had previously analyzed a sample of positive posts and found the macros satisfactory.)
              </li>
          </ul>
 
 
     <p class="secondary" style="color: black "> 
-        <strong> Locations mentioned in fraud claim </strong> 
+        <strong> More on claims of election fraud and irregularity </strong> 
      </p>
 
     <div id="iframes">
         <img src="viz/location_potential_fraud_claim_wordcloud.jpeg"></image>
-        <iframe src="viz/location_potential_fraud_claim_table.html"></iframe>
+        <iframe src="viz/posts containing fraud claims from the last 3 days.html"></iframe>
     </div>
 
+    <ul class="bullet-list">
+    <li> The chart on the upper left summarizes location that have been mentioned in posts that also 
+        may have also contain claims of election fraud or irregularity. The largest the text, the more 
+        frequently a location was mentioned. 
+    </li> 
+    <li> The table on the right presents posts that may contain claims regarding fraudulent elections. 
+        (Once again, please be aware of the potential for individual posts to be false positives.)
+    </ul>
+
+
     <p class="secondary" > 
-        <strong> Most popular posts from last 24 hours </strong> 
+        <strong> Most popular posts from the past 36 hours </strong> 
      </p>                                            
  
      <div id="viz">
-         <iframe src="viz/top_10_posts_from_the_past_day.html"></iframe>
+         <iframe src="viz/top_10_posts_from_the_36 hours.html"></iframe>
      </div>
 
 
