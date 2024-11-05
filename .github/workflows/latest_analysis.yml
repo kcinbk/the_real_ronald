@@ -37,12 +37,19 @@ jobs:
           pip install git+https://github.com/theskumar/python-dotenv.git#egg=python-dotenv
           pip install git+https://github.com/kcinbk/SearchTube.git#egg=SearchTube
       
+          - name: Check TORCH_CACHE Value
+          run: echo "TORCH_CACHE is set to '$TORCH_CACHE'"
+  
+      - name: Set Torch Cache
+        run: |
+          export TORCH_CACHE=${TORCH_CACHE:-/tmp/torch_cache}
+          echo "Using cache directory: $TORCH_CACHE"
+
       - name: Install PyTorch
         run: |
-          pip install -U --cache-dir $TORCH_CACHE torch==2.0.1 --index-url https://download.pytorch.org/whl/torch_stable.html
+          export TORCH_CACHE=${TORCH_CACHE:-/tmp/torch_cache}
+          pip install -U --cache-dir $TORCH_CACHE torch==2.0.1+cu121 --index-url https://download.pytorch.org/whl/cu121
 
-
-  
       - name: Install transformers
         run: |
             git clone https://github.com/huggingface/transformers
