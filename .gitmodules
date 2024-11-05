@@ -4,4 +4,4 @@
 
 [submodule "transformers"]
     path = transformers
-    url = https://github.com/someuser/transformers.git
+    url = https://github.com/huggingface/transformers.git
