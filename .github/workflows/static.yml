@@ -2,14 +2,10 @@
 name: Deploy static content to Pages
 
 on:
-  # Trigger the workflow when the latest_analysis workflow completes
-  workflow_run:
-    workflows: ["latest_analysis"]
-    types:
-      - completed
-    workflow_dispatch:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
 
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
