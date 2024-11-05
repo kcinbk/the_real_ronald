@@ -16,8 +16,6 @@ jobs:
     steps:
       - name: Check out this repo
         uses: actions/checkout@v2
-        with:
-          submodules: true  # This will initialize and update submodules automatically
 
       - name: Set up Python
         uses: actions/setup-python@v2
