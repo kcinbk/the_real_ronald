@@ -46,10 +46,6 @@ jobs:
       - name: Install transformers
         run: pip install transformers
 
-      - name: Install dependencies
-        run: |
-          pip install -r requirements.txt 
-
       - name: Verify PyTorch Installation
         run: |
           python -c "import torch; print('torch:', torch.__version__, torch)"
