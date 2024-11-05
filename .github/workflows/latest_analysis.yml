@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Check out this repo
         uses: actions/checkout@v2
+        with:
+          submodules: 'recursive' 
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -42,6 +44,10 @@ jobs:
 
       - name: Install transformers
         run: pip install transformers
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt 
 
       - name: Verify PyTorch Installation
         run: |

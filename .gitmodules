@@ -1,3 +1,7 @@
 [submodule "SearchTube"]
   path = SearchTube
   url = https://github.com/kcinbk/SearchTube.git
+  
+[submodule "transformers"]
+    path = transformers
+    url = https://github.com/your-username/transformers.git
