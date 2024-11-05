@@ -5,8 +5,8 @@ ruby '3.3.0'
 source 'https://rubygems.org'
 
 # Specify gems
-gem 'jekyll', '~> 4.2'
-gem 'github-pages', '~> 220'
+gem "github-pages", "~> 220"
+gem "jekyll", "3.9.0"
 gem 'bundler', '~> 2.1'
 
 # Grouping for development and test environments
