@@ -2,9 +2,12 @@
 name: Deploy static content to Pages
 
 on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches: ["main"]
+  # Trigger the workflow when the latest_analysis workflow completes
+  workflow_run:
+    workflows: ["latest_analysis"]
+    types:
+      - completed
+    workflow_dispatch:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
