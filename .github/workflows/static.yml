@@ -1,14 +1,14 @@
 name: Deploy static content to Pages
 
 on:
-  push:
-    branches: ["main"]
-    paths:
-      - 'latest_analysis.yml'
+  workflow_run:
+    workflows: ["latest_analysis.yml"]
+    types:
+      - completed
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
