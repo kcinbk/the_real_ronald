@@ -9,10 +9,9 @@
         <title> The Real Donald </title>
 
         <style>
-            .navbar {
-                margin-bottom: 30px;
+            .custom-bg {
+                background-color: #ece4ca
             }
-
            
             img {
                 display:flex;
@@ -43,8 +42,13 @@
             }
 
             .larger-text {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             }
+
+            .extra-larger-text {
+            font-size: 1.5rem;
+            }
+
         </style>
 
         <script>
@@ -68,18 +72,18 @@
 
 
 
-    <boyd>
-      <h1 class="bg text-center p-3">
+    <body class="bg-light">
+        <h1 class="container bg text-center p-2">
             What's up with The Donald?
         </h1>
 
-        <h2 class="bg text-center p-1">
+        <h2 class="container bg text-center p-3">
             An analytic tool capturing the latest misinformation trend
         </h2>
        </head>
 
     
-        <div class='container-sm mb-5'> 
+        <div class='container-sm mb-5 extra-larger-text'> 
             I'm a dashboard summarizing what folks are chatting about on <a href="https://patriots.win/">The Donald</a>, 
             where many diehard fans of the 45th president congregate. Every few hours, I pull the <strong style="color: red;">
             most popular posts </strong> from the landing page on The Donald, crunch some numbers and then show a picture of what they are discussing, 
@@ -119,8 +123,8 @@
 
     
     
-        <div class="container-sm mb-3"> 
-            <div class="row">
+        <div class="container-sm mb-5"> 
+            <div class="row">s
               <div class="col text-center">
                 <h3><em>Claims of election fraud and irregularity in the past 48 hours</em></h3>
               </div>
@@ -164,9 +168,9 @@
             title="Top Posts Table">
             </iframe>
         </div>
-        </div>
+    </div>
           
-        <div class="container-sm mb-3">
+        <div class="container-sm mb-5">
             <div class="row">
                 <div class="col text-center">
                 <h3><em>Top YouTube videos from the last 36 hours</em></h3>
@@ -196,9 +200,7 @@
         </div>
     </div>
             
-    
-        
-    </body>
+</body>
 
        
 </html>
