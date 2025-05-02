@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-tofit=no">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+        <title> The Real Donald </title>
+
+        <style>
+            .navbar {
+                margin-bottom: 30px;
+            }
+
+           
+            img {
+                display:flex;
+                width: 50%; 
+                height: 70vh;
+                margin:5px; /* Keep as is */
+            }
+
+            .plotly {
+                display: fixed;
+                flex-direction: column;
+                align-items: center;
+                width: 200%;
+            }
+
+            #iframes {
+                display: flex;
+                width: 100%;
+                justify-content: space-around;
+                margin-bottom:10px; /* Added margin-bottom for spacing consistency */
+            }
+
+            iframe {
+                display: flex;
+                width: 100%; 
+                height: 75vh;
+                border:None;
+            }
+
+            .larger-text {
+            font-size: 1.3rem;
+            }
+        </style>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+            window.addEventListener('scroll', function () {
+                var chart = document.getElementById('fraudChart');
+                var text = document.getElementById('fraudText');
+                var description = document.getElementById('fraudDescription');
+                
+                var rect = chart.getBoundingClientRect();
+                
+                if (rect.bottom <= 0) {
+                text.style.display = 'block';
+                description.style.display = 'block';
+                }
+            });
+            });
+        </script>
+    </head>
+
+
+
+
+    <boyd>
+      <h1 class="bg text-center p-3">
+            What's up with The Donald?
+        </h1>
+
+        <h2 class="bg text-center p-1">
+            An analytic tool capturing the latest misinformation trend
+        </h2>
+       </head>
+
+    
+        <div class='container-sm mb-5'> 
+            I'm a dashboard summarizing what folks are chatting about on <a href="https://patriots.win/">The Donald</a>, 
+            where many diehard fans of the 45th president congregate. Every few hours, I pull the <strong style="color: red;">
+            most popular posts </strong> from the landing page on The Donald, crunch some numbers and then show a picture of what they are discussing, 
+            so that you don't have to go there. 
+        </div>
+
+        <div class="container-sm mb-3">
+            <!-- Title -->
+            <div class="row">
+              <div class="col text-center">
+                <h3><em>Posts mentioning election, claims of election fraud in recent days</em></h3>
+              </div>
+            </div>
+          
+            <!-- Flexbox Container for Side-by-Side Layout -->
+            <div id="iframes" class="d-flex justify-content-between align-items-start">
+              <!-- Image -->
+              <img src="viz/election_vs_election_fraud_new.jpeg" style="width: 65%; height: 65%;" alt="Election vs Election Fraud Chart">
+          
+              <!-- List with Text -->
+              <ul class="bullet-list mt-3 larger-text" style="width: 45%; ">
+                <li> 
+                  This stacked chart compares <strong>potential</strong> claims of election fraud or irregularity against election-related content in each day's posts.
+                </li> 
+                <li> 
+                  Election-related posts were filtered through searching for keywords including "election," "ballot," and "votes."
+                </li>
+                <li> 
+                  To identify which of these election-related posts allege potential election fraud, a binary classification analysis was conducted with the open-sourced LLM model <a href="https://huggingface.co/MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli">DeBERTa-v3-base-mnli-fever-anli</a>. 
+                  (While there are certainly false positives, a volunteer and I had previously analyzed a sample of positive posts and found the macros to satisfactory.)
+                </li>
+              </ul>
+            </div>
+          
+          </div>
+          
+
+    
+    
+        <div class="container-sm mb-3"> 
+            <div class="row">
+              <div class="col text-center">
+                <h3><em>Claims of election fraud and irregularity in the past 48 hours</em></h3>
+              </div>
+            </div>
+
+            <div class="row"> 
+                <ul class="bullet-list mt-3 larger-text ">
+                    <li>
+                    The chart on the left summarizes locations mentioned in posts that likely 
+                    contain claims of election fraud or irregularity. The larger the text, the more 
+                    frequently the location was mentioned.
+                    </li> 
+                    <li>
+                    The interactive table on the right presents posts that may contain claims regarding fraudulent elections. 
+                    Try searching a location mentioned in the wordcloud chart in the search bar above the table.
+                    </li>
+                </ul>
+            </div>
+          
+            <div id="iframes" class="d-flex justify-content-between">
+              <img src="viz/location_potential_fraud_claim_wordcloud.jpeg" class="img-fluid" alt="Fraud Wordcloud" style="max-width: 48%;">
+              <iframe 
+                src="viz/posts containing fraud claims from the last 2 days.html" 
+                style="max-width: 100%; max-height: 600px; border: none;" 
+                title="Fraud Claims Table">
+              </iframe>
+            </div>         
+        </div>
+    
+        <div class="container-sm mb-5">
+        <div class="row">
+            <div class="col text-center">
+            <h3><em>Most popular posts from the past 36 hours</em></h3>
+            </div>
+        </div>
+        
+        <div id="table" class="d-flex justify-content-center mt-3">
+            <iframe 
+            src="viz/top_10_posts_from_the_36 hours.html" 
+            style="width: 100%; max-height: 600px; border: none;" 
+            title="Top Posts Table">
+            </iframe>
+        </div>
+        </div>
+          
+        <div class="container-sm mb-3">
+            <div class="row">
+                <div class="col text-center">
+                <h3><em>Top YouTube videos from the last 36 hours</em></h3>
+                </div>
+            </div>
+        <div class="row">
+            <ul class="bullet-list mt-3 larger-text ">
+            <li>
+                Cross-platform sharing, an integral part of the internet and social media ecosystem, is often difficult to study.
+            </li>
+            <li>
+                YouTube has made up nearly 50 percent of the video content shared on this site. Analyzing the videos shared 
+                on The Donald can help detect popular but misleading information on YouTube.
+            </li>
+            <li>
+                The "brief_description" field captures the first sentence from a YouTube video's 
+                full description, if available.
+            </li>
+            </ul>
+        </div>
+        <div id="viz" class="d-flex justify-content-center">
+            <iframe 
+            src="viz/top_youtube_table_new.html" 
+            style="width: 100%; max-height: 600px; border: none;" 
+            title="Top YouTube Videos Table">
+            </iframe>
+        </div>
+    </div>
+            
+    
+        
+    </body>
+
+       
+</html>
